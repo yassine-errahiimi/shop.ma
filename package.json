@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -23,5 +24,18 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "vite": "^7.2.4"
-  }
+  },
+  "description": "Application e-commerce moderne développée avec React et Vite, présentant une collection de produits marocains et internationaux avec un design responsive et des fonctionnalités interactives.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yassine-errahiimi/shop.ma.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yassine-errahiimi/shop.ma/issues"
+  },
+  "homepage": "https://github.com/yassine-errahiimi/shop.ma#readme"
 }
