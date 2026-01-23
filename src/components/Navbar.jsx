@@ -1,31 +1,27 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import useTheme from '../hooks/useTheme';
 import './Navbar.css';
 
 function Navbar() {
-  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="header">
       <div className="header-content">
         <Link to="/" className="logo">Shop.ma</Link>
         <nav className="nav">
-          <NavLink to="/" >
+          <NavLink to="/" className="nav-link" >
             Accueil
           </NavLink>
-          <NavLink to="/products" >
+          <NavLink to="/products" className="nav-link" >
             Produits
           </NavLink>
-          <NavLink to="/cart" >
+          <NavLink to="/cart" className="nav-link" >
             Panier
           </NavLink>
-          <NavLink to="/contact">
+          <NavLink to="/contact" className="nav-link" >
             Contact
           </NavLink>
-          <button onClick={toggleTheme} className="theme-toggle">
-            {theme === 'light' ? 'dark' : 'night'}
-          </button>
+         
         </nav>
       </div>
     </header>

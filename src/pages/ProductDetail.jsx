@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
+import CheckoutModal from '../components/CheckoutModal';
 
 function ProductDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { data: product, loading, error } = useFetch(`https://fakestoreapi.com/products/${id}`);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   if (loading) return <div className="loading">Chargement du produit...</div>;
   if (error) return <div className="error">Erreur: {error}</div>;
@@ -26,9 +28,19 @@ function ProductDetail() {
             Note: {product.rating?.rate} / 5 ({product.rating?.count} avis)
           </div>
           <p className="description">{product.description}</p>
-          <button className="btn-add-cart">Ajouter au panier</button>
+          <div className="action-buttons">
+            <button className="btn-add-cart" onClick={() => alert('Ajouté au panier !')}>Ajouter au panier</button>
+            <button className="btn-primary btn-buy" onClick={() => setIsModalOpen(true)}>Acheter maintenant</button>
+          </div>
         </div>
       </div>
+
+      {isModalOpen && (
+        <CheckoutModal 
+          product={product} 
+          onClose={() => setIsModalOpen(false)} 
+        />
+      )}
     </div>
   );
 }
